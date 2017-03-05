@@ -88,21 +88,21 @@
 
 
 <meta name="description" content="迁移的之前的文章
-最近需要使用Thrift格式进行数据序列化反序列化，遇到一些问题，所以看了下thrift的java库以及python库，学习了下thrift的存储格式，主要使用thrift的TCompactProtocol。发现该序列化方式主要使用了TLV格式式来存储每个字段，使用VARINT来表示其中的L。
-TLV 格式很简单，Type-length-value（类型-长度-值）。在一串字节中">
+最近需要使用 Thrift 格式进行数据序列化反序列化，遇到一些问题，所以看了下 thrift 的 java 库以及 python 库，学习了下 thrift 的存储格式，主要使用 thrift 的 TCompactProtocol。发现该序列化方式主要使用了 TLV 格式式来存储每个字段，使用 VARINT 来表示其中的 L。
+TLV 格式  很简单，Type-length-v">
 <meta property="og:type" content="article">
-<meta property="og:title" content="TLV格式 及 VARINT数值压缩存储方法">
+<meta property="og:title" content="TLV 格式 及 VARINT 数值压缩存储方法">
 <meta property="og:url" content="efeiefei.github.io/tlv-varint-thrift/index.html">
 <meta property="og:site_name" content="不停的飞啊飞">
 <meta property="og:description" content="迁移的之前的文章
-最近需要使用Thrift格式进行数据序列化反序列化，遇到一些问题，所以看了下thrift的java库以及python库，学习了下thrift的存储格式，主要使用thrift的TCompactProtocol。发现该序列化方式主要使用了TLV格式式来存储每个字段，使用VARINT来表示其中的L。
-TLV 格式很简单，Type-length-value（类型-长度-值）。在一串字节中">
+最近需要使用 Thrift 格式进行数据序列化反序列化，遇到一些问题，所以看了下 thrift 的 java 库以及 python 库，学习了下 thrift 的存储格式，主要使用 thrift 的 TCompactProtocol。发现该序列化方式主要使用了 TLV 格式式来存储每个字段，使用 VARINT 来表示其中的 L。
+TLV 格式  很简单，Type-length-v">
 <meta property="og:updated_time" content="2017-03-04T19:17:25.451Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="TLV格式 及 VARINT数值压缩存储方法">
+<meta name="twitter:title" content="TLV 格式 及 VARINT 数值压缩存储方法">
 <meta name="twitter:description" content="迁移的之前的文章
-最近需要使用Thrift格式进行数据序列化反序列化，遇到一些问题，所以看了下thrift的java库以及python库，学习了下thrift的存储格式，主要使用thrift的TCompactProtocol。发现该序列化方式主要使用了TLV格式式来存储每个字段，使用VARINT来表示其中的L。
-TLV 格式很简单，Type-length-value（类型-长度-值）。在一串字节中">
+最近需要使用 Thrift 格式进行数据序列化反序列化，遇到一些问题，所以看了下 thrift 的 java 库以及 python 库，学习了下 thrift 的存储格式，主要使用 thrift 的 TCompactProtocol。发现该序列化方式主要使用了 TLV 格式式来存储每个字段，使用 VARINT 来表示其中的 L。
+TLV 格式  很简单，Type-length-v">
 
 
 
@@ -136,7 +136,7 @@ TLV 格式很简单，Type-length-value（类型-长度-值）。在一串字节
 
 
 
-  <title> TLV格式 及 VARINT数值压缩存储方法 | 不停的飞啊飞 </title>
+  <title> TLV 格式 及 VARINT 数值压缩存储方法 | 不停的飞啊飞 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -286,7 +286,7 @@ TLV 格式很简单，Type-length-value（类型-长度-值）。在一串字节
             
             
               
-                TLV格式 及 VARINT数值压缩存储方法
+                TLV 格式 及 VARINT 数值压缩存储方法
               
             
           </h1>
@@ -329,7 +329,7 @@ TLV 格式很简单，Type-length-value（类型-长度-值）。在一串字节
 
           
           
-             <span id="/tlv-varint-thrift/" class="leancloud_visitors" data-flag-title="TLV格式 及 VARINT数值压缩存储方法">
+             <span id="/tlv-varint-thrift/" class="leancloud_visitors" data-flag-title="TLV 格式 及 VARINT 数值压缩存储方法">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -359,13 +359,13 @@ TLV 格式很简单，Type-length-value（类型-长度-值）。在一串字节
 
       
         <p><em>迁移的之前的文章</em></p>
-<p>最近需要使用Thrift格式进行数据序列化反序列化，遇到一些问题，所以看了下thrift的java库以及python库，学习了下thrift的存储格式，主要使用thrift的TCompactProtocol。<br>发现该序列化方式主要使用了TLV格式式来存储每个字段，使用VARINT来表示其中的L。</p>
-<h2 id="TLV-格式"><a href="#TLV-格式" class="headerlink" title="TLV 格式"></a>TLV 格式</h2><p>很简单，<strong>Type-length-value</strong>（类型-长度-值）。在一串字节中，使用该方式标示出一个自定义的字段。<br>三个域的表示方式均可自定义。如使用1个字节标示数据类型T，使用4个字节标示数据长度L，之后使用L个字节来表示数据的值。（其实Thrift的TBinaryProtocol就是这种方式）</p>
-<h2 id="VARINT-数值压缩存储"><a href="#VARINT-数值压缩存储" class="headerlink" title="VARINT 数值压缩存储"></a>VARINT 数值压缩存储</h2><p>c中int使用4个固定字节表式，即使数字很小。假如使用int16，则不能表示较大的数字。<br>而VARINT是一种可变长度的表示数字的方法，当数字较小时可以使用1个字节，如果比较大需要利用5个。<br>int转为varint，TCompact 的java实现如下：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">writeVarint32</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;                                 <span class="keyword">int</span> idx = <span class="number">0</span>;</div><div class="line">    <span class="keyword">while</span> (<span class="keyword">true</span>) &#123;</div><div class="line">        <span class="keyword">if</span> ((n &amp; ~<span class="number">0x7F</span>) == <span class="number">0</span>) &#123;</div><div class="line">            i32buf[idx++] = (<span class="keyword">byte</span>)n;</div><div class="line">            <span class="keyword">break</span>;</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            i32buf[idx++] = (<span class="keyword">byte</span>)((n &amp; <span class="number">0x7F</span>) | <span class="number">0x80</span>);</div><div class="line">            n &gt;&gt;&gt;= <span class="number">7</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    trans_.write(i32buf, <span class="number">0</span>, idx); <span class="comment">// trans_不用管，可以看作字节流</span></div><div class="line">  &#125;</div></pre></td></tr></table></figure></p>
-<p>其实就是，依次从字节串的末尾选取7位，最高位添加1或0构造出1个字节。并且，只有最后一次选取时最高位置为0，此时剩余的位构成到数字是小于 1000 0000，的所以添加0并不会影响其大小。如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">10进制: 296</div><div class="line">16进制: x01 x28</div><div class="line"> 2进制: 0000 0001 0010 1000</div><div class="line">      a            --- ----  ==&gt; 1010 1000  选择末7位，最高位置为1</div><div class="line">      b    -- ---- -         ==&gt; 1010 1000 0000 0010  右移7位，选择末7位，最高位置为0</div><div class="line">VARINT: 1010 1000 0000 0010</div><div class="line">16进制：xa8 x02</div></pre></td></tr></table></figure></p>
-<p>很明显，通过这种方法，我们得到的VARINT，依次读取每个字节，只有表示该VARINT的最后一个字节，最高位为0。所以，当我们读取VARINT时，只要读取到最高位为0的字节时，就表示已经是VARINT的最后一个字节了。</p>
-<p>结合TLV就是：先读取1个字节得到类型T；然后读取n个字节计算出长度L，其中第n个字节的最高位为0；然后读取L个字节，表示我们的V。</p>
-<p>最后，我们看下读取VARINT时，python的处理方法：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">readVarint</span><span class="params">(trans)</span>:</span></div><div class="line">    result = <span class="number">0</span> </div><div class="line">    shift = <span class="number">0</span> </div><div class="line">    <span class="keyword">while</span> <span class="keyword">True</span>:</div><div class="line">        x = trans.readAll(<span class="number">1</span>)    // 读取下一个字符</div><div class="line">        byte = ord(x)              // 转成整数表示</div><div class="line">        result |= (byte &amp; <span class="number">0x7f</span>) &lt;&lt; shift // 将该字节去掉最高位放在已有结果的左侧</div><div class="line">    <span class="keyword">if</span> byte &gt;&gt; <span class="number">7</span> == <span class="number">0</span>:       // 如果该字节最高位是<span class="number">0</span>，结束</div><div class="line">        <span class="keyword">return</span> result</div><div class="line">    shift += <span class="number">7</span></div></pre></td></tr></table></figure></p>
+<p>最近需要使用 Thrift 格式进行数据序列化反序列化，遇到一些问题，所以看了下 thrift 的 java 库以及 python 库，学习了下 thrift 的存储格式，主要使用 thrift 的 TCompactProtocol。<br>发现该序列化方式主要使用了 TLV 格式式来存储每个字段，使用 VARINT 来表示其中的 L。</p>
+<h2 id="TLV- 格式"><a href="#TLV- 格式" class="headerlink" title="TLV 格式"></a>TLV 格式 </h2><p> 很简单，<strong>Type-length-value</strong>（类型 - 长度 - 值）。在一串字节中，使用该方式标示出一个自定义的字段。<br>三个域的表示方式均可自定义。如使用 1 个字节标示数据类型 T，使用 4 个字节标示数据长度 L，之后使用 L 个字节来表示数据的值。（其实 Thrift 的 TBinaryProtocol 就是这种方式）</p>
+<h2 id="VARINT- 数值压缩存储"><a href="#VARINT- 数值压缩存储" class="headerlink" title="VARINT 数值压缩存储"></a>VARINT 数值压缩存储 </h2><p>c 中 int 使用 4 个固定字节表式，即使数字很小。假如使用 int16，则不能表示较大的数字。<br> 而 VARINT 是一种可变长度的表示数字的方法，当数字较小时可以使用 1 个字节，如果比较大需要利用 5 个。<br>int 转为 varint，TCompact 的 java 实现如下：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">writeVarint32</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;                                 <span class="keyword">int</span> idx = <span class="number">0</span>;</div><div class="line">    <span class="keyword">while</span> (<span class="keyword">true</span>) &#123;</div><div class="line">        <span class="keyword">if</span> ((n &amp; ~<span class="number">0x7F</span>) == <span class="number">0</span>) &#123;</div><div class="line">            i32buf[idx++] = (<span class="keyword">byte</span>)n;</div><div class="line">            <span class="keyword">break</span>;</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            i32buf[idx++] = (<span class="keyword">byte</span>)((n &amp; <span class="number">0x7F</span>) | <span class="number">0x80</span>);</div><div class="line">            n &gt;&gt;&gt;= <span class="number">7</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    trans_.write(i32buf, <span class="number">0</span>, idx); <span class="comment">// trans_不用管，可以看作字节流</span></div><div class="line">  &#125;</div></pre></td></tr></table></figure></p>
+<p>其实就是，依次从字节串的末尾选取 7 位，最高位添加 1 或 0 构造出 1 个字节。并且，只有最后一次选取时最高位置为 0，此时剩余的位构成到数字是小于 1000 0000，的所以添加 0 并不会影响其大小。如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">10 进制: 296</div><div class="line">16 进制: x01 x28</div><div class="line"> 2 进制: 0000 0001 0010 1000</div><div class="line">      a            --- ----  ==&gt; 1010 1000  选择末 7 位，最高位置为 1</div><div class="line">      b    -- ---- -         ==&gt; 1010 1000 0000 0010  右移 7 位，选择末 7 位，最高位置为 0</div><div class="line">VARINT: 1010 1000 0000 0010</div><div class="line">16 进制：xa8 x02</div></pre></td></tr></table></figure></p>
+<p>很明显，通过这种方法，我们得到的 VARINT，依次读取每个字节，只有表示该 VARINT 的最后一个字节，最高位为 0。所以，当我们读取 VARINT 时，只要读取到最高位为 0 的字节时，就表示已经是 VARINT 的最后一个字节了。</p>
+<p>结合 TLV 就是：先读取 1 个字节得到类型 T；然后读取 n 个字节计算出长度 L，其中第 n 个字节的最高位为 0；然后读取 L 个字节，表示我们的 V。</p>
+<p>最后，我们看下读取 VARINT 时，python 的处理方法：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">readVarint</span><span class="params">(trans)</span>:</span></div><div class="line">    result = <span class="number">0</span> </div><div class="line">    shift = <span class="number">0</span> </div><div class="line">    <span class="keyword">while</span> <span class="keyword">True</span>:</div><div class="line">        x = trans.readAll(<span class="number">1</span>)    // 读取下一个字符</div><div class="line">        byte = ord(x)              // 转成整数表示</div><div class="line">        result |= (byte &amp; <span class="number">0x7f</span>) &lt;&lt; shift // 将该字节去掉最高位放在已有结果的左侧</div><div class="line">    <span class="keyword">if</span> byte &gt;&gt; <span class="number">7</span> == <span class="number">0</span>:       // 如果该字节最高位是<span class="number">0</span>，结束</div><div class="line">        <span class="keyword">return</span> result</div><div class="line">    shift += <span class="number">7</span></div></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -402,8 +402,8 @@ TLV 格式很简单，Type-length-value（类型-长度-值）。在一串字节
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/web2kindle/" rel="next" title="推送网页到Kindle">
-                <i class="fa fa-chevron-left"></i> 推送网页到Kindle
+              <a href="/web2kindle/" rel="next" title="推送网页到 Kindle">
+                <i class="fa fa-chevron-left"></i> 推送网页到 Kindle
               </a>
             
           </div>
@@ -441,7 +441,7 @@ TLV 格式很简单，Type-length-value（类型-长度-值）。在一串字节
   <div class="comments" id="comments">
     
       <div class="ds-thread" data-thread-key="tlv-varint-thrift/"
-           data-title="TLV格式 及 VARINT数值压缩存储方法" data-url="efeiefei.github.io/tlv-varint-thrift/">
+           data-title="TLV 格式 及 VARINT 数值压缩存储方法" data-url="efeiefei.github.io/tlv-varint-thrift/">
       </div>
     
   </div>
@@ -536,7 +536,7 @@ TLV 格式很简单，Type-length-value（类型-长度-值）。在一串字节
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#TLV-格式"><span class="nav-number">1.</span> <span class="nav-text">TLV 格式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#VARINT-数值压缩存储"><span class="nav-number">2.</span> <span class="nav-text">VARINT 数值压缩存储</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#TLV- 格式"><span class="nav-number">1.</span> <span class="nav-text">TLV 格式 </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#VARINT- 数值压缩存储"><span class="nav-number">2.</span> <span class="nav-text">VARINT 数值压缩存储 </span></a></li></ol></div>
             
 
           </div>

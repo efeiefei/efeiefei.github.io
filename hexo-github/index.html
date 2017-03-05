@@ -87,16 +87,19 @@
 
 
 
-<meta name="description" content="马上就开始写">
+<meta name="description" content="去年使用搬瓦工的 VPS，使用 Ghost 搭建的博客，前几天忘记续费，又赶上 Vultr 做活动，所以更换为 Vultr 的 VPS 了。Vultr 搭建了 Shadosocks，速度杠杠的，通过这个链接购买有优惠哦：Vultr 优惠通道
+想在新环境下搭一套 Ghost 博客，可是总有问题，Ghost开始商业化后也对源码不怎么样上心。自己从头搭建博客，网站内容也需要自己想办法备份，在搬瓦工上就是">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Github搭建Hexo">
+<meta property="og:title" content="搭建个人博客：Github、Hexo">
 <meta property="og:url" content="efeiefei.github.io/hexo-github/index.html">
 <meta property="og:site_name" content="不停的飞啊飞">
-<meta property="og:description" content="马上就开始写">
-<meta property="og:updated_time" content="2017-03-04T19:21:55.487Z">
+<meta property="og:description" content="去年使用搬瓦工的 VPS，使用 Ghost 搭建的博客，前几天忘记续费，又赶上 Vultr 做活动，所以更换为 Vultr 的 VPS 了。Vultr 搭建了 Shadosocks，速度杠杠的，通过这个链接购买有优惠哦：Vultr 优惠通道
+想在新环境下搭一套 Ghost 博客，可是总有问题，Ghost开始商业化后也对源码不怎么样上心。自己从头搭建博客，网站内容也需要自己想办法备份，在搬瓦工上就是">
+<meta property="og:updated_time" content="2017-03-05T16:30:05.252Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Github搭建Hexo">
-<meta name="twitter:description" content="马上就开始写">
+<meta name="twitter:title" content="搭建个人博客：Github、Hexo">
+<meta name="twitter:description" content="去年使用搬瓦工的 VPS，使用 Ghost 搭建的博客，前几天忘记续费，又赶上 Vultr 做活动，所以更换为 Vultr 的 VPS 了。Vultr 搭建了 Shadosocks，速度杠杠的，通过这个链接购买有优惠哦：Vultr 优惠通道
+想在新环境下搭一套 Ghost 博客，可是总有问题，Ghost开始商业化后也对源码不怎么样上心。自己从头搭建博客，网站内容也需要自己想办法备份，在搬瓦工上就是">
 
 
 
@@ -130,7 +133,7 @@
 
 
 
-  <title> Github搭建Hexo | 不停的飞啊飞 </title>
+  <title> 搭建个人博客：Github、Hexo | 不停的飞啊飞 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -280,7 +283,7 @@
             
             
               
-                Github搭建Hexo
+                搭建个人博客：Github、Hexo
               
             
           </h1>
@@ -323,7 +326,7 @@
 
           
           
-             <span id="/hexo-github/" class="leancloud_visitors" data-flag-title="Github搭建Hexo">
+             <span id="/hexo-github/" class="leancloud_visitors" data-flag-title="搭建个人博客：Github、Hexo">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -352,7 +355,40 @@
       
 
       
-        <p>马上就开始写</p>
+        <p>去年使用搬瓦工的 VPS，使用 <em>Ghost</em> 搭建的博客，前几天忘记续费，又赶上 Vultr 做活动，所以更换为 Vultr 的 VPS 了。<br>Vultr 搭建了 Shadosocks，速度杠杠的，通过这个链接购买有优惠哦：<a href="http://www.vultr.com/?ref=7123589" target="_blank" rel="external">Vultr 优惠通道</a></p>
+<p>想在新环境下搭一套 <em>Ghost</em> 博客，可是总有问题，<em>Ghost</em>开始商业化后也对源码不怎么样上心。自己从头搭建博客，网站内容也需要自己想办法备份，在搬瓦工上就是忘记备份了 ┑(￣Д ￣)┍。<br>想要尝试下<strong>Hexo + Github</strong>，不用准备服务器，也不用考虑备份，就是需要本地生成再 push 到 github，没有直接在网站后台编辑文章方便。 </p>
+<h2 id="快速概览"><a href="# 快速概览" class="headerlink" title="快速概览"></a>快速概览 </h2><p><strong>Github Pages</strong> 是 Github 提供的，用于展示用户 / 项目，特定仓库放的静态网页可以直接通过域名访问到，就像访问网站似的。它的官方好基友是 <a href="https://jekyllrb.com/" target="_blank" rel="external">Jekyll</a>，Ruby 实现，用于转换<em>Markdown</em> 为静态网页。<br><strong>Hexo</strong>是另一个使用广泛的静态网页生成框架，由 Node.js 实现，使用更简单。<br><strong>NexT</strong>是 Hexo 的一个主题，简单大气，配置方便，并且集成了一些插件，很强大。</p>
+<p>有能力的同学可以直接看官方文档，更加清晰、直观、全面：<br><a href="https://pages.github.com/" target="_blank" rel="external">空间 Github Pages</a><br><a href="https://hexo.io/zh-cn/" target="_blank" rel="external">框架 Hexo</a><br><a href="http://theme-next.iissnan.com/" target="_blank" rel="external">主题 NexT</a></p>
+<h2 id="简单搭建"><a href="# 简单搭建" class="headerlink" title="简单搭建"></a>简单搭建 </h2><p> 从零开始简单使用的教程，网上有很多可参考：<a href="http://www.jianshu.com/p/e99ed60390a8" target="_blank" rel="external">20 分钟教你使用 hexo 搭建 github 博客 </a><br> 在下面记录稍微高级点的用法，主要包括：独立域名、自动备份、跨机使用、自定义主题</p>
+<h2 id="备份与跨机使用"><a href="# 备份与跨机使用" class="headerlink" title="备份与跨机使用"></a>备份与跨机使用 </h2><p> 通过上一步，我们已经可以通过 <code>hexo new xxx; vi xxx.md; hexo g -d</code> 这简单几步来写文章并发布了。<br>但如何在另一台机器上写文章？在公司写了一半回家接着写怎么办？</p>
+<p>首先了解下 Hexo 在 github 发布文章的机制：</p>
+<ol>
+<li>github 提供仓库 xxx.github.io，并且使得我们可以通过域名 xxx.github.io 来访问该仓库的 master 分支下的内容</li>
+<li>在本地搭建 Hexo，使用 <code>Hexo init</code> 构建所需的组织结构，通过 <code>hexo new xxx</code> 在<em>source/_posts</em>文件夹下生成文件<em>xxx.md</em>，然后手动编辑该文件写作。</li>
+<li><code>hexo generat</code>会使用 <em>source</em> 目录下所有内容生成静态网页，并置于 <em>public</em> 目录下</li>
+<li><code>hexo deploy</code>时，会将 public 种的内容在 <em>.depoly_git</em> 目录 add 并 commit，然后 <em>git push -f</em> 到仓库的 master 分支上，注意是强制 push。</li>
+</ol>
+<p>上述过程可以看到，目前发布的内容是依赖于本机的配置以及 source 目录中的内容生成的。如果切换到新机器，没有 hexo 可以重装，没有相应配置可以再配一次（虽然比较麻烦），可是没有 source 目录执行 <code>hexo g -d</code> 时就会将原有网页清掉，完全变成新机器上所生产的内容了。<br>我们希望 <strong>可以方便地在新机器获得与原有机器相同的使用环境 </strong>。其实很简单，将用到的配置、源文件自动备份就可以了。<br>Hexo 会自动生成网页并 push 到相应 master 分支，我们手动将与生成网页相关的文件备份。Git 方便备份也方便还原，所以可选择 Oschina 等私有仓库，也可选择 Github 等公开仓库，还可使用同一仓库的不同分支。<br> 这里我们使用 Github 仓库 xxx.github.io 的 hexo 分支：</p>
+<ol>
+<li>仓库 xxx.github.io 新建 hexo 分支，并将其设置为默认分支</li>
+<li><code>git clone https://github.com/xxx/xxx.github.io.git</code> 到本地 xxx 目录</li>
+<li>本机<code>hexo init project</code>，并将 project 中内容复制到 xxx 中。（！不可直接在 xxx 中执行<code>hexo init</code>，这个命令会将原有.git 文件夹清空）</li>
+<li>大力配置一番，并将无用文件加入.gitignore，<code>git add -all; git commit; git push</code><br>我的.gitignore 文件为：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">db.json</div><div class="line">debug.log</div><div class="line">node_modules/</div><div class="line">public/</div><div class="line">.deploy_git/</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>之后再写文章，改配置，换主题等，按如下步骤：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"># 新增文章或做更改</div><div class="line">hexo new &quot;post name&quot;</div><div class="line"># 源文件 push 到 hexo 分支</div><div class="line">git add .</div><div class="line">git commit -m &apos;message&apos;</div><div class="line">git push</div><div class="line"># 生成网页并部署</div><div class="line">hexo generate</div><div class="line">hexo deploy</div></pre></td></tr></table></figure></p>
+<p>在另一台新机器上使用时<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"># GIT_URL 是仓库地址，PROJECT 是在本机的目录</div><div class="line">git clone $GIT_URL $PROJECT</div><div class="line">cd $PROJECT</div><div class="line"># ①</div><div class="line">npm install hexo</div><div class="line">npm install</div></pre></td></tr></table></figure></p>
+<p>在另一台机器上继续写文章时<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git pull   # !!! 不要忘记 !!!</div><div class="line"># ①</div></pre></td></tr></table></figure></p>
+<p>还记得之前说过 <code>hexo deploy</code> 使用的命令类似 <code>git push -f</code> 吗？如果想保留之前的发布记录，即 master 分支历史，在①处执行操作<code>git clone $GIT_URL --branch master --single-branch .deploy_git</code>。不执行会按照当前记录强制 push，更改 github 上的 commit 历史，当然这点对我们部署的网站没有太大影响，我们最终要看的是展现出来的网站，并且源文件的历史记录在 hexo 分支上也有。</p>
+<h2 id="独立域名"><a href="# 独立域名" class="headerlink" title="独立域名"></a>独立域名 </h2><p> 独立域名是指使用自己申请的域名，<a href="http://yulianfei.cn" target="_blank" rel="external">yulianfei.cn</a>这种；而不是分配的 <em>xxx.github.io</em> 这种。</p>
+<ol>
+<li>向域名服务商申请独立域名 xxx.com；服务商有万网、Godaddy 等</li>
+<li>在仓库 xxx.github.io 的 setting 中，在 <em>Custom domain</em> 中填入申请到的<em>xxx.com</em></li>
+<li>在 Hexo 的 source 文件夹下新建文件，文件名为 CNAME，内容为 xxx.com，然后通过 hexo g -d 生成并部署</li>
+<li>在域名服务商出设置 DNS 解析，添加 A 纪录，指向 IP <em>192.30.252.153</em>、<em>192.30.252.154</em>，若有变动可查看<a href="https://help.github.com/articles/setting-up-an-apex-domain/" target="_blank" rel="external">Github Pages Custome domain</a></li>
+<li>等待解析生效，根据服务商不同 5 分钟到 24 小时都有可能，生效后直接输入 xxx.com 就看到自己的博客了。</li>
+</ol>
+<h2 id="自定义主题"><a href="# 自定义主题" class="headerlink" title="自定义主题"></a>自定义主题 </h2><p> 太累了，不想写了，<strong>NexT</strong>文档很好，也很容易。<br>这个主题还支持 <strong>多说评论 </strong>、<strong> 访问统计</strong>，打开这两个功能，一个博客的功能基本就全了。</p>
 
       
     </div>
@@ -424,7 +460,7 @@
   <div class="comments" id="comments">
     
       <div class="ds-thread" data-thread-key="hexo-github/"
-           data-title="Github搭建Hexo" data-url="efeiefei.github.io/hexo-github/">
+           data-title="搭建个人博客：Github、Hexo" data-url="efeiefei.github.io/hexo-github/">
       </div>
     
   </div>
@@ -448,8 +484,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.jpg"
@@ -500,6 +545,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#快速概览"><span class="nav-number">1.</span> <span class="nav-text">快速概览 </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#简单搭建"><span class="nav-number">2.</span> <span class="nav-text">简单搭建 </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#备份与跨机使用"><span class="nav-number">3.</span> <span class="nav-text">备份与跨机使用 </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#独立域名"><span class="nav-number">4.</span> <span class="nav-text">独立域名 </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自定义主题"><span class="nav-number">5.</span> <span class="nav-text">自定义主题 </span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

@@ -87,19 +87,17 @@
 
 
 
-<meta name="description" content="去年使用搬瓦工的 VPS，使用 Ghost 搭建的博客，前几天忘记续费，又赶上 Vultr 做活动，所以更换为 Vultr 的 VPS 了。Vultr 搭建了 Shadosocks，速度杠杠的，通过这个链接购买有优惠哦：Vultr 优惠通道
-想在新环境下搭一套 Ghost 博客，可是总有问题，Ghost开始商业化后也对源码不怎么样上心。自己从头搭建博客，网站内容也需要自己想办法备份，在搬瓦工上就是">
+<meta name="description" content="去年使用搬瓦工的 VPS，使用 Ghost 搭建的博客，前几天忘记续费，又赶上 Vultr 做活动，所以更换为 Vultr 的 VPS 了。Vultr 搭建了 Shadosocks，速度杠杠的，通过这个链接购买有优惠哦：Vultr 优惠通道 想在新环境下搭一套 Ghost 博客，可是总有问题，Ghost开始商业化后也对源码不怎么样上心。自己从头搭建博客，网站内容也需要自己想办法备份，在搬瓦工上就是">
+<meta name="keywords" content="技术随笔">
 <meta property="og:type" content="article">
 <meta property="og:title" content="搭建个人博客：Github、Hexo">
 <meta property="og:url" content="efeiefei.github.io/hexo-github/index.html">
 <meta property="og:site_name" content="不停的飞啊飞">
-<meta property="og:description" content="去年使用搬瓦工的 VPS，使用 Ghost 搭建的博客，前几天忘记续费，又赶上 Vultr 做活动，所以更换为 Vultr 的 VPS 了。Vultr 搭建了 Shadosocks，速度杠杠的，通过这个链接购买有优惠哦：Vultr 优惠通道
-想在新环境下搭一套 Ghost 博客，可是总有问题，Ghost开始商业化后也对源码不怎么样上心。自己从头搭建博客，网站内容也需要自己想办法备份，在搬瓦工上就是">
-<meta property="og:updated_time" content="2017-03-05T16:33:16.041Z">
+<meta property="og:description" content="去年使用搬瓦工的 VPS，使用 Ghost 搭建的博客，前几天忘记续费，又赶上 Vultr 做活动，所以更换为 Vultr 的 VPS 了。Vultr 搭建了 Shadosocks，速度杠杠的，通过这个链接购买有优惠哦：Vultr 优惠通道 想在新环境下搭一套 Ghost 博客，可是总有问题，Ghost开始商业化后也对源码不怎么样上心。自己从头搭建博客，网站内容也需要自己想办法备份，在搬瓦工上就是">
+<meta property="og:updated_time" content="2017-06-14T12:59:25.917Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="搭建个人博客：Github、Hexo">
-<meta name="twitter:description" content="去年使用搬瓦工的 VPS，使用 Ghost 搭建的博客，前几天忘记续费，又赶上 Vultr 做活动，所以更换为 Vultr 的 VPS 了。Vultr 搭建了 Shadosocks，速度杠杠的，通过这个链接购买有优惠哦：Vultr 优惠通道
-想在新环境下搭一套 Ghost 博客，可是总有问题，Ghost开始商业化后也对源码不怎么样上心。自己从头搭建博客，网站内容也需要自己想办法备份，在搬瓦工上就是">
+<meta name="twitter:description" content="去年使用搬瓦工的 VPS，使用 Ghost 搭建的博客，前几天忘记续费，又赶上 Vultr 做活动，所以更换为 Vultr 的 VPS 了。Vultr 搭建了 Shadosocks，速度杠杠的，通过这个链接购买有优惠哦：Vultr 优惠通道 想在新环境下搭一套 Ghost 博客，可是总有问题，Ghost开始商业化后也对源码不怎么样上心。自己从头搭建博客，网站内容也需要自己想办法备份，在搬瓦工上就是">
 
 
 
@@ -376,9 +374,9 @@
 <li>大力配置一番，并将无用文件加入.gitignore，<code>git add -all; git commit; git push</code></li>
 </ol>
 <p>我的.gitignore 文件为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">db.json</div><div class="line">debug.log</div><div class="line">node_modules/</div><div class="line">public/</div><div class="line">.deploy_git/</div></pre></td></tr></table></figure></p>
-<p>之后再写文章，改配置，换主题等，按如下步骤：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"># 新增文章或做更改</div><div class="line">hexo new &quot;post name&quot;</div><div class="line"># 源文件 push 到 hexo 分支</div><div class="line">git add .</div><div class="line">git commit -m &apos;message&apos;</div><div class="line">git push</div><div class="line"># 生成网页并部署</div><div class="line">hexo generate</div><div class="line">hexo deploy</div></pre></td></tr></table></figure></p>
-<p>在另一台新机器上使用时<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"># GIT_URL 是仓库地址，PROJECT 是在本机的目录</div><div class="line">git clone $GIT_URL $PROJECT</div><div class="line">cd $PROJECT</div><div class="line"># ①</div><div class="line">npm install hexo</div><div class="line">npm install</div></pre></td></tr></table></figure></p>
-<p>在另一台机器上继续写文章时<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git pull   # !!! 不要忘记 !!!</div><div class="line"># ①</div></pre></td></tr></table></figure></p>
+<p>之后再写文章，改配置，换主题等，按如下步骤：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span> 新增文章或做更改</div><div class="line">hexo new "post name"</div><div class="line"><span class="meta">#</span> 源文件 push 到 hexo 分支</div><div class="line">git add .</div><div class="line">git commit -m 'message'</div><div class="line">git push</div><div class="line"><span class="meta">#</span> 生成网页并部署</div><div class="line">hexo generate</div><div class="line">hexo deploy</div></pre></td></tr></table></figure></p>
+<p>在另一台新机器上使用时<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span> GIT_URL 是仓库地址，PROJECT 是在本机的目录</div><div class="line">git clone $GIT_URL $PROJECT</div><div class="line">cd $PROJECT</div><div class="line"><span class="meta">#</span> ①</div><div class="line">npm install hexo</div><div class="line">npm install</div></pre></td></tr></table></figure></p>
+<p>在另一台机器上继续写文章时<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git pull   # !!! 不要忘记 !!!</div><div class="line"><span class="meta">#</span> ①</div></pre></td></tr></table></figure></p>
 <p>还记得之前说过 <code>hexo deploy</code> 使用的命令类似 <code>git push -f</code> 吗？如果想保留之前的发布记录，即 master 分支历史，在①处执行操作<code>git clone $GIT_URL --branch master --single-branch .deploy_git</code>。不执行会按照当前记录强制 push，更改 github 上的 commit 历史，当然这点对我们部署的网站没有太大影响，我们最终要看的是展现出来的网站，并且源文件的历史记录在 hexo 分支上也有。</p>
 <h2 id="独立域名"><a href="# 独立域名" class="headerlink" title="独立域名"></a>独立域名 </h2><p> 独立域名是指使用自己申请的域名，<a href="http://yulianfei.cn" target="_blank" rel="external">yulianfei.cn</a>这种；而不是分配的 <em>xxx.github.io</em> 这种。</p>
 <ol>
